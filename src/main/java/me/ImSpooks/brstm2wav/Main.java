@@ -15,6 +15,12 @@ public class Main {
     public static final int HEIGHT = 180 + 27;
 
     public static void main(String[] args) {
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName()); // look and feel from system's os
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
+            e.printStackTrace();
+        }
+
         JFrame frame = new JFrame("Brstm 2 Wav converter");
         frame.setContentPane(new Layout(frame).mainPanel);
 
