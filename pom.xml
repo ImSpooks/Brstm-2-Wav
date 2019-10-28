@@ -6,7 +6,16 @@
 
     <groupId>me.ImSpooks</groupId>
     <artifactId>brstm2wav</artifactId>
-    <version>1.0</version>
+    <version>2.0</version>
+
+    <dependencies>
+        <dependency>
+            <groupId>ws.schild</groupId>
+<!--            <artifactId>jave-all-deps</artifactId>-->
+            <artifactId>jave-core</artifactId>
+            <version>2.6.1</version>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>

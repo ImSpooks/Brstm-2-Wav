@@ -14,7 +14,15 @@ A BRSTM file is an audio file used for old Nintendo consolers. This audio file i
 2. Click on the 'Select file' button to select a file. *You can selected multiple files*
 3. Click on the 'Convert file' button to convert the selected brstm file into a wav file.
 
-The converted audio file will be in the same directory labeled `<file>.wav`
+The converted audio file will be in the directory `output` as `<file>.wav`
 
-To delete an entry you need to select a file and press the `delete` key on your keyboard.
-To edit an entry you need to select a file and press `enter` to change it.
++ To delete an entry you need to select a file and press the `delete` key on your keyboard.
++ To edit an entry you need to select a file and press `enter` to change it.
+
+#### Settings
+
++ Audio Format: *`Default: WAV`* 
+    + WAV: Converts to a `WAV` file
+    + MP3: Converts to a `MP3` file
+    + OGG: Converts to a `OGG` file
++ Loop times: Determines how many times the file gets looped. E.g. `0` means it will play once, `5` plays it once times and loops back to the `LoopStartSamble` value until it looped `x` amount of times.

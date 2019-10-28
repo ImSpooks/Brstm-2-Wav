@@ -1,5 +1,6 @@
 package me.ImSpooks.brstm2wav;
 
+import me.ImSpooks.brstm2wav.conversion.Converter;
 import me.ImSpooks.brstm2wav.gui.Layout;
 
 import javax.swing.*;
@@ -11,8 +12,34 @@ import java.awt.*;
  */
 public class Main {
 
-    public static final int WIDTH = 500 + 7;
-    public static final int HEIGHT = 180 + 27;
+    private Converter converter;
+    private JFrame frame;
+
+    public Main() {
+        this.converter = new Converter();
+
+        JFrame frame = new JFrame("Brstm 2 Wav converter");
+
+        Layout layout = new Layout(this);
+        frame.setContentPane(layout.mainPanel);
+
+        frame.setPreferredSize(new Dimension(Global.WIDTH, Global.HEIGHT));
+
+        frame.setResizable(true);
+        frame.setLocationRelativeTo(null);
+
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+    }
+
+    public Converter getConverter() {
+        return converter;
+    }
+
+    public JFrame getFrame() {
+        return frame;
+    }
 
     public static void main(String[] args) {
         try {
@@ -20,19 +47,6 @@ public class Main {
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
             e.printStackTrace();
         }
-
-        JFrame frame = new JFrame("Brstm 2 Wav converter");
-        frame.setContentPane(new Layout(frame).mainPanel);
-
-        frame.setSize(WIDTH, HEIGHT);
-        frame.setMinimumSize(new Dimension(WIDTH, HEIGHT));
-        frame.setPreferredSize(new Dimension(WIDTH, HEIGHT));
-        frame.setMaximumSize(new Dimension(Integer.MAX_VALUE, Integer.MAX_VALUE));
-        frame.setResizable(true);
-        frame.setLocationRelativeTo(null);
-
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
+        new Main();
     }
 }

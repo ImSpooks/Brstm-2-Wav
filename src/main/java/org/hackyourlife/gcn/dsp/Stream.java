@@ -6,4 +6,5 @@ public interface Stream {
 	public int getChannels();
 	public long getSampleRate();
 	public void close() throws Exception;
+	int getLoopTimes();
 }

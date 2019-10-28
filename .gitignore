@@ -1,4 +1,6 @@
 .idea/
 resources/
 target/
+output/
+tmp/
 *.iml

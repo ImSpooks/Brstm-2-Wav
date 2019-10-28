@@ -37,6 +37,12 @@ public class BFSTM implements Stream {
 	public final static int CODEC_PCM16BE = 1;
 	public final static int CODEC_ADPCM = 2;
 
+	private int loopTimes = 0;
+	@Override
+	public int getLoopTimes() {
+		return loopTimes;
+	}
+
 	public BFSTM(RandomAccessFile file) throws FileFormatException, IOException {
 		this.file = file;
 		this.filesize = file.length();
@@ -94,6 +100,8 @@ public class BFSTM implements Stream {
 
 	@Override
 	public boolean hasMoreData() {
+		if (filepos >= filesize)
+			loopTimes++;
 		return((loop_flag != 0) || (filepos < filesize));
 	}
 

@@ -33,6 +33,12 @@ public class DSP implements Stream {
 
 	ADPCMDecoder decoder;
 
+	private int loopTimes = 0;
+	@Override
+	public int getLoopTimes() {
+		return loopTimes;
+	}
+
 	public DSP(RandomAccessFile file)
 			throws FileFormatException, IOException {
 		ch2 = null;

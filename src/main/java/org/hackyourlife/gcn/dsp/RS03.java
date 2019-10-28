@@ -28,6 +28,12 @@ public class RS03 implements Stream {
 
 	ADPCMDecoder decoder[];
 
+	private int loopTimes = 0;
+	@Override
+	public int getLoopTimes() {
+		return loopTimes;
+	}
+
 	public RS03(RandomAccessFile file) throws FileFormatException, IOException {
 		this.file = file;
 		this.filesize = file.length();
@@ -134,6 +140,8 @@ public class RS03 implements Stream {
 
 	@Override
 	public boolean hasMoreData() {
+		if (filepos >= filesize)
+			loopTimes++;
 		return((loop_flag != 0) || (filepos < filesize));
 	}
 
