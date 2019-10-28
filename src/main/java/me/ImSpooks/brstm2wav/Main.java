@@ -22,6 +22,7 @@ public class Main {
         frame.setMinimumSize(new Dimension(WIDTH,  HEIGHT));
         frame.setMaximumSize(new Dimension(Integer.MAX_VALUE, Integer.MAX_VALUE));
         frame.setResizable(false);
+        frame.setLocationRelativeTo(null);
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
