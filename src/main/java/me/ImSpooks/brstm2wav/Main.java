@@ -11,17 +11,18 @@ import java.awt.*;
  */
 public class Main {
 
-    private static final int WIDTH = 350;
-    private static final int HEIGHT = 100;
+    public static final int WIDTH = 500 + 7;
+    public static final int HEIGHT = 180 + 27;
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Brstm 2 Wav converter");
-        frame.setContentPane(new Layout().mainPanel);
+        frame.setContentPane(new Layout(frame).mainPanel);
 
         frame.setSize(WIDTH, HEIGHT);
-        frame.setMinimumSize(new Dimension(WIDTH,  HEIGHT));
+        frame.setMinimumSize(new Dimension(WIDTH, HEIGHT));
+        frame.setPreferredSize(new Dimension(WIDTH, HEIGHT));
         frame.setMaximumSize(new Dimension(Integer.MAX_VALUE, Integer.MAX_VALUE));
-        frame.setResizable(false);
+        frame.setResizable(true);
         frame.setLocationRelativeTo(null);
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
